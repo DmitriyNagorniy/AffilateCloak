@@ -1,21 +1,188 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<ng-container *ngIf="step==1">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/2.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>I'm a</h3>
+                <div class="form-row">
+                    <button type="button"
+                            (click)="nextStep()">Man
+                        <i class="zmdi zmdi-long-arrow-right"></i>
+                    </button>
+                    <button type="button"
+                            (click)="nextStep()">Woman
+                        <i class="zmdi zmdi-long-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step==2">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/3.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>I'm looking for</h3>
+                <div class="form-row">
+                    <button type="button"
+                            (click)="nextStep()">Man
+                        <i class="zmdi zmdi-long-arrow-right"></i>
+                    </button>
+                    <button type="button"
+                            (click)="nextStep()">Woman
+                        <i class="zmdi zmdi-long-arrow-right"></i>
+                    </button>
+                    <button type="button"
+                            (click)="nextStep()">Everyone
+                        <i class="zmdi zmdi-long-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step==3">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/4.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>How old are you?</h3>
+                <div class="form-row">
+                    <input type="number"
+                           [min]="18"
+                           class="form-control"
+                           style="width: 100%;"
+                           [(ngModel)]="userAge"
+                           [ngModelOptions]="{standalone: true}"
+                           placeholder="Age">
+                </div>
+                <button type="button"
+                        (click)="nextStep()">Next
+                    <i class="zmdi zmdi-long-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step==4">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/5.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>My name is ...</h3>
+                <div class="form-row">
+                    <input type="text"
+                           class="form-control"
+                           style="width: 100%;"
+                           [ngModelOptions]="{standalone: true}"
+                           [(ngModel)]="userName"
+                           placeholder="Name">
+                </div>
+                <button type="button"
+                        (click)="nextStep()">Next
+                    <i class="zmdi zmdi-long-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step==5">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/6.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>How would you describe yourself?</h3>
+                <div class="form-row">
+                    <textarea name=""
+                              id=""
+                              placeholder="Message"
+                              class="form-control"
+                              style="height: 130px;width: 100%;"></textarea>
+                </div>
+                <button type="button"
+                        (click)="nextStep()">Next
+                    <i class="zmdi zmdi-long-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step==6">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/7.jpg"
+                     alt="">
+            </div>
+            <form>
+                <h3>Where do you live?</h3>
+                <div class="form-row">
+                    <input type="text"
+                           class="form-control"
+                           style="width: 100%;"
+                           [ngModelOptions]="{standalone: true}"
+                           [(ngModel)]="userCountry"
+                           placeholder="Country/Town">
+                </div>
+                <button type="button"
+                        (click)="nextStep()">Next
+                    <i class="zmdi zmdi-long-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="step>6">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="assets/images/user.png"
+                     alt="">
+            </div>
+            <form>
+                <h3>Your Profile:</h3>
+                <div class="form-row">
+                    <span style="width: 100%;">Name: {{userName}}</span>
+                </div>
+                <div class="form-row">
+                    <span style="width: 100%;">Age: {{userAge}}</span>
+                </div>
+                <div class="form-row">
+                    <span style="width: 100%;">Country/Town: {{userCountry}}</span>
+                </div>
+                <div class="form-row">
+                    <button type="button"
+                            style="background-color: grey;">Find Matches
+                    </button>
+                </div>
+                <div class="form-row">
+                    <span style="width: 100%;font-weight: 800;">Your account is under review.<br />This process mean take a while.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-container>
 
 <router-outlet></router-outlet>
